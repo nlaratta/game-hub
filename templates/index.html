@@ -5,13 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Noah's Game Hub</title>
     <link rel="stylesheet" href="../static/css/styles.css">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
 <body>
     <header>
         <h1>Noah's Game Hub</h1>
-        <nav>
-            <button>Login</button>
-            <button>Sign Up</button>
+        <nav id="authNav">
+            <button id="loginBtn" class="auth-button">Login</button>
+            <button id="signUpBtn" class="auth-button">Sign Up</button>
+            <button id="logoutBtn" class="auth-button" style="display: none;">Log Out</button>
         </nav>
     </header>
     <main>
@@ -42,5 +44,39 @@
             </div>
         </div>
     </main>
+
+    <!-- Sign Up Modal -->
+    <div id="signUpModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Sign Up</h2>
+            <form id="signUpForm">
+                <input type="text" placeholder="Username" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit">Sign Up</button>
+            </form>
+            <div class="separator">or</div>
+            <div id="g_id_onload"
+                 data-client_id="21555881467-bfn93k7889rha53i6j8ugq43u80dbs39.apps.googleusercontent.com"
+                 data-callback="handleCredentialResponse">
+            </div>
+            <div class="g_id_signin" data-type="standard"></div>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Login</h2>
+            <form id="loginForm">
+                <input type="text" placeholder="Username" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="../static/js/modal.js"></script>
 </body>
 </html>
