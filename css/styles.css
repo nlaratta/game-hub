@@ -1,0 +1,164 @@
+/* Sage palette and Inter type, shared with noahlaratta.com and the repo banners. */
+:root {
+  --sage: #2D6A4F;
+  --sage-light: #52B788;
+  --sage-lighter: #D8F3DC;
+  --sage-dark: #1B4332;
+  --bg: #FAFAF8;
+  --surface: #FFFFFF;
+  --ink: #1A1A1A;
+  --muted: #6B7280;
+  --border: #E5E7EB;
+  --accent: #2D6A4F;
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 8px 24px rgba(27, 67, 50, 0.08);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0F1412;
+    --surface: #18201C;
+    --ink: #ECEFED;
+    --muted: #9CA3AF;
+    --border: #26302B;
+    --accent: #52B788;
+    --sage-lighter: #1F3A2D;
+    --sage-dark: #B7E4C7;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.35);
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+  border-left: 12px solid var(--sage);
+}
+
+a { color: inherit; }
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(48px, 9vw, 96px) clamp(16px, 6vw, 88px) 32px;
+}
+
+/* Decorative rings, as on the banners. */
+.hero::before,
+.hero::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+.hero::before { width: 420px; height: 420px; right: -160px; top: -160px; background: var(--sage-lighter); }
+.hero::after  { width: 270px; height: 270px; right: -100px; top: -100px; background: var(--sage-light); opacity: 0.22; }
+
+.hero > * { position: relative; }
+
+.eyebrow {
+  margin: 0 0 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2.5rem, 7vw, 4.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.lede {
+  margin: 16px 0 0;
+  max-width: 36ch;
+  font-size: clamp(1.05rem, 2.2vw, 1.35rem);
+  color: var(--muted);
+}
+
+main {
+  flex: 1;
+  padding: 16px clamp(16px, 6vw, 88px) 64px;
+}
+
+.games {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr));
+  gap: 24px;
+  max-width: 1200px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.card:hover { transform: translateY(-2px); }
+
+.thumb { display: block; aspect-ratio: 16 / 10; background: var(--sage-lighter); }
+.thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.body { display: flex; flex-direction: column; gap: 10px; padding: 20px 22px 22px; flex: 1; }
+
+.card h2 { margin: 0; font-size: 1.3rem; }
+.blurb { margin: 0; color: var(--muted); }
+
+.tags { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.tags li {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--sage-dark);
+  background: var(--sage-lighter);
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+
+.actions { display: flex; gap: 10px; margin-top: auto; padding-top: 8px; }
+.actions a {
+  text-decoration: none;
+  font-weight: 600;
+  padding: 9px 18px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+.actions .play { background: var(--sage); border-color: var(--sage); color: #fff; }
+.actions .play:hover { background: var(--sage-dark); border-color: var(--sage-dark); }
+@media (prefers-color-scheme: dark) {
+  .actions .play:hover { background: #24563F; border-color: #24563F; }
+}
+.actions .source:hover { border-color: var(--sage-light); }
+
+a:focus-visible { outline: 3px solid var(--sage-light); outline-offset: 2px; border-radius: 10px; }
+
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 24px clamp(16px, 6vw, 88px) 32px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+footer a { text-decoration: none; }
+footer a:hover { color: var(--accent); }
+
+@media (prefers-reduced-motion: reduce) {
+  .card { transition: none; }
+  .card:hover { transform: none; }
+}

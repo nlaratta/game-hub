@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Game Hub · Noah Laratta</title>
+  <meta name="description" content="Small browser games by Noah Laratta, free to play with nothing to install.">
+  <meta property="og:title" content="Game Hub · Noah Laratta">
+  <meta property="og:description" content="Small browser games, free to play with nothing to install.">
+  <meta property="og:image" content="https://nlaratta.github.io/game-hub/assets/social.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="hero">
+    <p class="eyebrow">nlaratta / game-hub</p>
+    <h1>Game Hub</h1>
+    <p class="lede">Small browser games I've built. Free to play, nothing to install.</p>
+  </header>
+
+  <main>
+    <ul class="games" id="games" aria-label="Games"></ul>
+  </main>
+
+  <footer>
+    <a href="https://noahlaratta.com">noahlaratta.com</a>
+    <span aria-hidden="true">·</span>
+    <a href="https://github.com/nlaratta">github.com/nlaratta</a>
+    <span aria-hidden="true">·</span>
+    <a href="https://github.com/nlaratta/game-hub">Source</a>
+  </footer>
+
+  <template id="game-card">
+    <li class="card">
+      <a class="thumb" target="_self"><img alt="" loading="lazy" width="800" height="480"></a>
+      <div class="body">
+        <h2></h2>
+        <p class="blurb"></p>
+        <ul class="tags"></ul>
+        <div class="actions">
+          <a class="play">Play</a>
+          <a class="source">Source</a>
+        </div>
+      </div>
+    </li>
+  </template>
+
+  <script src="js/games.js"></script>
+  <script src="js/hub.js"></script>
+</body>
+</html>
