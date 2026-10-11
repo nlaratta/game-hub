@@ -3,10 +3,10 @@
 const GAMES = [
   {
     title: 'Freakmoji Clicker',
-    blurb: 'Click the freakmoji, climb a ladder of upgrades from Bare Fists to the Railgun, and chase a top-10 score.',
+    blurb: 'A 3D incremental game: poke a very startled emoji through seven diorama eras with forty weapons, an animated minion crew, bosses and prestige.',
     play: 'https://nlaratta.github.io/emoji-clicker/',
     source: 'https://github.com/nlaratta/emoji-clicker',
-    image: 'assets/games/emoji-clicker.png',
-    tags: ['Clicker', 'JavaScript'],
+    image: 'assets/games/emoji-clicker.jpg',
+    tags: ['Incremental', '3D', 'Three.js'],
   },
 ];
